@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tea_list/features/details/presentation/details_screen.dart';
-import 'package:tea_list/features/favorite/presentation/favorite_screen.dart';
-import 'package:tea_list/features/home/presentation/home_screen.dart';
 import 'package:tea_list/features/intro/presentation/intro_screen.dart';
-import 'package:tea_list/features/notes/presentation/notes_screen.dart';
+import 'package:tea_list/features/main_page/main_page.dart';
 
 class TeaApplication extends StatelessWidget {
   TeaApplication({super.key});
@@ -13,10 +10,7 @@ class TeaApplication extends StatelessWidget {
     initialLocation: "/",
     routes: [
       GoRoute(path: "/", builder: (context, state) => IntroScreen()),
-      GoRoute(path: "/home", builder: (context, state) => HomeScreen()),
-      GoRoute(path: "/favorite", builder: (context, state) => FavoriteScreen()),
-      GoRoute(path: "/notes", builder: (context, state) => NotesScreen()),
-      GoRoute(path: "/details", builder: (context, state) => DetailsScreen()),
+      GoRoute(path: "/main_page", builder: (context, state) => MainPage()),
     ],
   );
 
@@ -26,7 +20,12 @@ class TeaApplication extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: _router,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          elevation: 4,
+          backgroundColor: Colors.black,
+          selectedItemColor: Color.fromARGB(255, 148, 131, 95),
+          unselectedItemColor: Colors.white,
+        ),
         buttonTheme: ButtonThemeData(
           buttonColor: Color.fromARGB(255, 14, 79, 30),
         ),

@@ -9,10 +9,11 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void nextPage() {
-      context.go("/home");
+      context.go("/main_page");
     }
 
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           Container(
