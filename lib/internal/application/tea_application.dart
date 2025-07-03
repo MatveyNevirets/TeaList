@@ -22,6 +22,15 @@ class TeaApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(routerConfig: _router);
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: _router,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.black,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Color.fromARGB(255, 14, 79, 30),
+        ),
+      ),
+    );
   }
 }
